@@ -12,9 +12,9 @@
 
 @interface TwittCell : UITableViewCell
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
-- (void)updateWithTwitt:(Twitt *)twitt;
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;  // simple init
+- (void)updateWithTwitt:(Twitt *)twitt;                     // configure cell with info in Twitt object
 
-+ (CGFloat)twittCellHeigtWithTwitt:(Twitt *)twitt;
++ (CGFloat)twittCellHeigtWithTwitt:(Twitt *)twitt;          // return cell height with twitt text
 
 @end

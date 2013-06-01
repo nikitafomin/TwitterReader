@@ -15,8 +15,8 @@
 @protocol TwittsControllerDelegate <NSObject>
 
 @optional
-- (void)twittsController:(TwittsController *)controller getTwitts:(NSArray *)twitts;
-- (void)twittsControllerFailedRequest:(TwittsController *)controller;
+- (void)twittsController:(TwittsController *)controller getTwitts:(NSArray *)twitts;    // call delegate, when get response with twitts
+- (void)twittsControllerFailedRequest:(TwittsController *)controller;                   // call delegate, when request failed
 
 @end
 
@@ -27,6 +27,6 @@
 
 @property (nonatomic, weak) id <TwittsControllerDelegate> delegate;
 
-- (void)updateTwittsForCount:(NSInteger)count;
+- (void)updateTwittsForCount:(NSInteger)count;  // post reques and cal delegate, when get response
 
 @end

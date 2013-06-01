@@ -49,6 +49,10 @@ static NSDateFormatter *_dateFormatter = nil;
         NSString *date = [_dateFormatter stringFromDate:twitt.date];
         [[self detailTextLabel] setText:[NSString stringWithFormat:@"%@,   %@",twitt.userName,date]];
         
+        
+        // if image already loaded, we set image
+        // is not, we set gray squere and wait for image load
+        
         if (twitt.image) {
             [[self imageView] setImage:twitt.image];
         } else {
@@ -68,6 +72,8 @@ static NSDateFormatter *_dateFormatter = nil;
 
 - (void)updateImageWithNotification:(NSNotification *)notif
 {
+    // call, when image loaded
+    
     Twitt *twitt = [notif object];
     UIImage *icon = twitt.image;
     if (icon) {

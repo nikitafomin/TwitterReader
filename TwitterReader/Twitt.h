@@ -22,6 +22,6 @@
 @property (nonatomic, strong) NSString *imageURL;
 @property (nonatomic, strong) UIImage *image;
 
-+ (Twitt *)twittFromDictionary:(NSDictionary *)dict;
++ (Twitt *)twittFromDictionary:(NSDictionary *)dict;  // create Twitt object from dictionary in response
 
 @end

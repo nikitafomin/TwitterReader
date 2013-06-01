@@ -49,7 +49,6 @@
 		112147061757717E003434CC /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 112146FD1757717E003434CC /* whiteArrow@2x.png */; };
 		11214708175775AA003434CC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11214707175775AA003434CC /* QuartzCore.framework */; };
 		1121470B17577968003434CC /* TwittCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121470A17577968003434CC /* TwittCell.m */; };
-		11D048DB175782060092CDFB /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D048DA175782060092CDFB /* Twitter.framework */; };
 		11D048DE175782A00092CDFB /* TwittsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D048DD175782A00092CDFB /* TwittsController.m */; };
 		11D048E1175785030092CDFB /* Twitt.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D048E0175785030092CDFB /* Twitt.m */; };
 /* End PBXBuildFile section */
@@ -139,7 +138,6 @@
 		11214707175775AA003434CC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1121470917577967003434CC /* TwittCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwittCell.h; sourceTree = "<group>"; };
 		1121470A17577968003434CC /* TwittCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwittCell.m; sourceTree = "<group>"; };
-		11D048DA175782060092CDFB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		11D048DC175782A00092CDFB /* TwittsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwittsController.h; sourceTree = "<group>"; };
 		11D048DD175782A00092CDFB /* TwittsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwittsController.m; sourceTree = "<group>"; };
 		11D048DF175785030092CDFB /* Twitt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitt.h; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11D048DB175782060092CDFB /* Twitter.framework in Frameworks */,
 				11214708175775AA003434CC /* QuartzCore.framework in Frameworks */,
 				09CD0CE81756117600B03EDD /* libxml2.2.dylib in Frameworks */,
 				09CD0C441755E5E000B03EDD /* UIKit.framework in Frameworks */,
@@ -185,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				09CD0CE71756117600B03EDD /* libxml2.2.dylib */,
-				11D048DA175782060092CDFB /* Twitter.framework */,
 				11214707175775AA003434CC /* QuartzCore.framework */,
 				09CD0C431755E5E000B03EDD /* UIKit.framework */,
 				09CD0C451755E5E000B03EDD /* Foundation.framework */,

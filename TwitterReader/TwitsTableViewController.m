@@ -30,9 +30,15 @@
     _numberOfRows = 30;
     _isActivityOnScreen = NO;
     
+    
+    // create twitts controller
     _twittsController = [[TwittsController alloc] init];
     [_twittsController setDelegate:self];
     
+    
+    ////////////
+    //
+    // add "pull to refresh" view
     
     _refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
     _refreshHeaderView.delegate = self;
@@ -41,8 +47,9 @@
     //  update the last update date
 	[_refreshHeaderView refreshLastUpdatedDate];
     
-    _twittsController = [[TwittsController alloc] init];
-    [_twittsController setDelegate:self];
+    ////////////
+    ////////////
+    
     
     
     [self startUpdate];
@@ -52,11 +59,13 @@
 {
     [super viewDidAppear:animated];
     
+    // show activity in first start
     if (_isReloading) {
         [self showActivityIndicator];
     }
 }
 
+// add "increase" button
 - (void)addTableFooterView
 {
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 80)];
@@ -87,7 +96,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _twitts.count;
-    //return _numberOfRows;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -162,6 +170,7 @@
      */
 }
 
+// to increase twitts count and update (increase button tap)
 - (void)increaseTwittsCount
 {
     NSLog(@"\n\nIncrease twitts count\n\n");
@@ -172,6 +181,10 @@
 }
 
 #pragma mark -Activity indicator
+
+//////////////////////////////////
+//
+// block with show/hide activity indicator animation
 
 - (void)showActivityIndicator
 {
@@ -205,7 +218,15 @@
     }];
 }
 
+//////////////////////////////////
+//////////////////////////////////
+
+
 #pragma mark - Loading delegate
+
+//////////////////////////////////
+//
+// block with updating
 
 - (void)startUpdate
 {
@@ -230,12 +251,17 @@
     }
 }
 
+//////////////////////////////////
+//////////////////////////////////
+
+
 #pragma mark - Pull to refresh delegate
 
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
 {
+    // call when need start update
+    
     [self startUpdate];
-    [self performSelector:@selector(endUpdate) withObject:nil afterDelay:2.0f];
 }
 
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
@@ -250,6 +276,10 @@
 
 #pragma mark - Scroll view delegate
 
+////////////////////
+//
+// Transmit scroll vew delegat calls
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
@@ -260,16 +290,26 @@
 	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
 }
 
+//
+////////////////////
+////////////////////
+
 #pragma mark -Twitter controller delegate
 
 - (void)twittsController:(TwittsController *)controller getTwitts:(NSArray *)twitts
 {
+    // call when get new twitts
+    //
+    
     _twitts = twitts;
     [self endUpdate];
 }
 
 - (void)twittsControllerFailedRequest:(TwittsController *)controller
 {
+    // call when request fault
+    //
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Request error. sorry :(" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
     [alert show];
     

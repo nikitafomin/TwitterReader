@@ -20,11 +20,14 @@ static NSDateFormatter *_dateFormatter = nil;
 
 - (void)dealloc
 {
+    // close connections after dealloc
     [_engine closeAllConnections];
 }
 
 + (void)initialize
 {
+    // create single dateFormatter for all Twitt objects
+    
     NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     
     _dateFormatter = [[NSDateFormatter alloc] init];
@@ -89,6 +92,7 @@ static NSDateFormatter *_dateFormatter = nil;
     
     _image = image;
     
+    // call twitt cell
     [[NSNotificationCenter defaultCenter] postNotificationName:DidLoadUserIconNotification object:self];
 }
 
