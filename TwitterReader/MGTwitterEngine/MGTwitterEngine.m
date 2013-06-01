@@ -989,6 +989,8 @@
 		requestType = MGTwitterUserTimelineForUserRequest;
     }
     
+    [params setObject:[NSString stringWithFormat:@"%@", @"true"] forKey:@"include_rts"];
+    
     return [self _sendRequestWithMethod:nil path:path queryParameters:params body:nil 
                             requestType:requestType 
                            responseType:MGTwitterStatuses];
